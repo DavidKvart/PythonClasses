@@ -1,0 +1,344 @@
+Python Cheatsheet
+##########################################################################
+#
+#
+##########################################################################
+Algorithmics
+	How to structure a solution for a problem in code:
+		1. Break down the task into smaller tasks
+		2. Repeat until each task is a simple small task
+		3. Start filling in each part with code
+	Example
+		Problem: Create a function that calculates the sum of all the numbers in a list.
+		Breakdown:
+			1. Define a list of numbers
+			2. Define a variable for a sum
+			3. Go through each variable in the list and add it to the sum
+			4. Return the sum
+			5. Put it all in a function
+		Fill:
+			1. list_of_num = [10,14,5,-5]
+			2. sum = 0
+			3. 
+				for i in list_of_num:
+					sum += i
+			4. return sum
+			5. def my_func():
+		Final code:
+			def my_func():
+				list_of_num = [10,14,5,-5]
+				sum = 0
+				for i in list_of_num:
+					sum += i
+				return sum	
+##########################################################################
+#
+#
+##########################################################################
+Variables
+	Defining variables
+		<name-of-var> = <value-of-var> 		- Create a variable that contains said value
+	Example:
+		x = 5
+		y = "I am a text"
+		z = True
+	Types		
+		int 	- whole numbers
+		bool 	- True or False
+		sting 	- Text
+		float 	- large/partial numbers
+		None 	- No value
+	Extra
+		x = x + y
+		is the same as
+		x += y
+	Functions
+		Casting
+			int(x) 		- Returns var x as int
+			str(x)		- Returns var x as string
+			float(x)	- Returns var x as float
+			bool(x) 	- Returns var as bool (also checks if a values is True or False)
+			list(x)		- turns var into list
+		Other
+			type(x) 	- Return type of x
+##########################################################################
+#
+#
+##########################################################################
+Input
+	Functions
+		input("msg")	- Prints the string in the brackets and returns a users input as a string
+	Example
+		x = input("This is a msg") 		- x will have the values the user typed in
+##########################################################################
+#
+#
+##########################################################################
+Output
+	Functions
+		print("msg")					- prints the string in the brackets
+	Example
+		print("Hello world")
+	Format strings
+		x = 5
+		y = "hello"
+		print("data: %d %s" % (x,y))		# Print the variables after % ( ) into the correct locations
+	Format locations
+		%d 									# integer
+		%s 									# string
+##########################################################################
+#
+#
+##########################################################################
+Strings
+	Strings are special lists of single characters
+	Example:
+		msg = "This is a string"
+	Escape Characters:					# Tells python to ignore the next char or read it as special char
+		Char 	How to write	Meaning
+		\ 		\\				Backslash
+		' 		\'				Single quote
+		" 		\" 				Double quote
+		n 		\n 				New line
+		t 		\t 				Tab
+		r 		\r 				Carriage return
+	Indexing
+		x[i] 							# returns the i char of the str/list x
+	Example
+		x = "Hello"
+		x[0]  == "H"
+		x[1]  == "e"
+		x[2]  == "l"
+		x[3]  == "l"
+		x[4]  == "o"
+		x[-1] == "o"
+		x[-2] == "l" 
+	Slicing
+		x[m:a]							# returns all the chars from char m until (not including) char a of the str/list x
+		x[m:a:d]						# returns all the chars from char m until (not including) char a while jumping by d of the str/list x
+		x[:a]							# returns all the chars from start until (not including) char a of the str/list x
+		x[m:]							# returns all the chars from char m until end of the str/list x
+		x[::-1] 						# returns all the chars from list x in reverse order
+	Example
+		x = "Hello"
+		x[2:4]
+			"ll"
+		x[1:4:2]
+			"el"
+	Casting
+		str(x)							# turns var into string
+	Functions 
+		len(x)							# Returns length of string
+		x.count(y)						# Count number of chars/strings y in x
+		x.upper()						# return upper case version of string x
+		x.lower()						# return lower case version of string x
+		x.replace(a,b)					# replace string a for string b in string x
+		x.find(y)						# Find the index of the first time y appears in x
+		x.isdigit() 					# Returns true if string is built only of numbers (0-9)
+		x.encdoe()						# Turns sting to bytes
+		x.decode()						# Turns bytes to string
+		x.split(' ')					# Splits string x accoring to the spacer in ''
+##########################################################################
+#
+#
+##########################################################################
+Conditions
+	Conditions allow you to control the flow of the code by checking various statements and deciding to run code or not according to whether the statements are true or not
+	Structure:
+		if (condition a):				# If the condition a is true do action
+			action
+		elif (condition b):				# If the condition a is false and condition b is true do action
+			action
+		else:							# If all previous conditions are false do action
+			action
+	Conditions:
+		a <  b								# a Less then b
+		a <= b 								# a Less then or equal b
+		a == b								# a Equal b
+		a >= b								# a Greater or equal b
+		a >	 b								# a Greater then b
+		a != b								# a Not equal b
+		a is in b 							# a is in b (for strings or lists)
+		a is not in b 						# a is not in b (for strings or lists)
+	Complex Conditions:
+		(condition a) and (condition b) 	# condition a is true and condition b is true
+		(condition a) or (condition b)		# condition a is true or condition b is true
+		not (condition b) 					# condition b is false
+##########################################################################
+#
+#
+##########################################################################
+Lists
+	Lists are a group of variables that can be all accessed by the same variable name + and index
+	Example:
+		my_list = ["msg",1,24,5.56,x]
+	Indexing
+		my_list[i] 							# returns the i var of the list my_list
+	Example
+		my_list[0]  == "msg"
+		my_list[1]  == 1
+		my_list[2]  == 24
+		my_list[3]  == 5.56
+		my_list[-2] == 5.56
+	Overwrite index
+		my_list[1] = "new"
+		my_list == ["msg","new",24,5.56,x]
+	Slicing
+		x[m:a]							# returns all the vars from index m until (not including) index a of the list x
+		x[m:a:d]						# returns all the vars from index m until (not including) index a while jumping by d of the list x
+		x[:a]							# returns all the vars from start until (not including) index a of the list x
+		x[m:]							# returns all the vars from index m until end of the list x
+		x[::-1] 						# returns all the vars from list x in reverse order
+	Casting
+		list(x)							# turns var into list
+	Arithmetic
+		a + b 							# returns combination of 2 lists
+		a * 3 							# returns a list that is like 3 times list a
+	Conditions
+		a in b 							# True if var a exists in list b
+	Functions
+		dir(list)						# Shows list of all list functions
+		range(a,b)						# returns special range var with all numbers from a to b.
+		x.append(y)						# Add var y at the end of list x
+		x.copy() 						# Creates copy of a list
+		x.remove(y)						# Remove first occurrence of var y in list
+		' '.join(x)						# creates string out of list of strings with the char/string in '' as the spacer
+		x.split(' ')					# Splits string x accoring to the spacer in ''
+##########################################################################
+#
+#
+##########################################################################
+Loops
+	Loops allow you to control the flow of code by repeating certain blocks of code according to conditions
+	Structure:
+		While:							# A while loop repeats until the condition is no longer true
+			while (condition):
+				action
+		For:							# A for loop repeats until it goes through all the values in the list/dic/etc - each repeat the variable will be equal to the next value in the list/dic/etc
+			for variable in list/dictionary/etc:
+				action
+	Examples (Both loops print the numbers from 0  to 10):
+		counter = 0
+		while counter <= 10:
+			print(counter)
+			counter += 1
+
+		for i in range(0,11):
+			print(i)
+
+	Special loop commands:
+		continue 						# Skip the rest of the code block in the loop and jump straight into the next repeat
+		break 							# Leave the loop immediately - ignore all other code left in the loop
+	Special loops
+		while True: 					# Infinite loop - "never" stops (unless break is used)
+		Nested Loop:					# A nested loop is a loop that repeats within another loop
+			for i in list_a:
+				for j in list_b:
+					if  i == j:
+						print("happy")
+##########################################################################
+#
+#
+##########################################################################
+Dictionaries
+	Like Lists where the indexing is chosen by the user instead of just incrementing numbers
+	Example:
+		my_dict = ["a":"msg", "b":1, "boris":24, 5:5.56]
+	Indexing
+		my_dict[i] 							# returns the i var of the dict my_dict
+	Example
+		my_dict["a"]  == "msg"
+		my_dict["b"]  == 1
+		my_dict["boris"]  == 24
+		my_dict[5]  == 5.56
+	Adding key
+		my_dict["new"] = 100
+		my_dict == ["a":"msg", "b":1, "boris":24, 5:5.56, "new":100]
+	Functions
+		my_dict.keys()						# Returns sequence of keys
+		my_dict.values() 					# Returns sequence of values
+		my_dict.items() 					# Returns sequence of tuples of each key and values
+		my_dict.pop(x)						# Returns value of key x and removes value and key from dict
+		
+##########################################################################
+#
+#
+##########################################################################
+Files
+	Opening and closing file:
+		f = open("file-location/name",'type of opening') 		# Opens a file and saves it to variable
+		f.close()
+	or
+		with open("file-location/name",'type of opening') as f: # Opens a file and saves it to variable and automatically closes it when the action block is over
+			action
+	Examples:
+		f = open("x.txt",'rb')
+		f.close()
+		with open("x.txt",'wb') as z:
+			z.write("aaaa")
+	Types of opening:
+		'rb'								# Opens file for reading	
+		'ab'								# Opens file for writing to the end of the file
+		'wb'								# Opens file for overwriting (erases original file)
+	Functions:
+		f.write("msg".encode())						# Writes string to file as bytes
+		f.read(num)									# Returns num amount of bytes from the file - if no num then reads the rest of the file
+		f.find(num)									# Puts pointer to location
+##########################################################################
+#
+#
+##########################################################################
+Functions
+	Functions allow us to put blocks of code in a package to use later in our code.
+	Functions accept variables by arguments and return them with the return command.
+	Functions don't run until called.
+	Structure:
+		def my_func(argument1, argument2):
+			action
+			return var
+	Example:
+		def add(a,b):
+			return a+b
+
+		print(add(5,8))
+		>> 13
+	Using functions:
+		func_name(x,y,z)							# Runs a func while giving the values in x,y,z as variables
+		x.func_name(a,b,c)							# Object(usually some complex varible like a list, string etc.) x runs a func while giving the values in x,y,z as variables
+		y = func_name(x,y,z)						# Runs a func while giving the values in x,y,z as variables and saves the return to y
+##########################################################################
+#
+#
+##########################################################################
+Modules
+	Modules are premade pieces of code that can be added to our code using imports and used by us
+	imports
+		import module_name						# imports module -> forces the user to use module_name.function_name() to run module functions
+		import module_name as new_name			# imports module -> forces the user to use new_name.function_name() to run module functions
+		from module_name import function_name1, function_name2			# Imports only certain functions from the module, can be used as function_name1()
+		from module_name import function_name1 as new_func_name			# Imports only certain functions from the module, can be used as new_func_name()
+	os
+		os.system("cmnd")						# Runs a system command that has been put into the "cmnd" string
+		os.popen("cmnd")						# Runs a system command that has been put into the "cmnd" string and returns the output of the command as a file pointer
+	socket
+		s = socket.socket()						# Create TCP IPV4 socket
+		Client:
+			s.connect((host,port))				# Connect to host and port
+			s.send("msg".encode())				# Send string as bytes to connected host
+			s.recv(num)							# Recv num of bytes from connected host (optimal 1024)
+			s.close()							# Close connection and socket
+		Server:
+			s.bind((host,port))						# Binds the socket to port you want to open
+			s.listen()								# Listens for connections
+			conn, addr = s.accept()					# Accept connection and save it to conn, save the address of whoever connected to addr
+			conn.send("msg".encode())				# Send string as bytes to connected host
+			conn.recv(num)							# Recv num of bytes from connected host (optimal 1024)
+			conn.close()							# Close connection
+##########################################################################
+#
+#
+##########################################################################
+Scapy
+	Recommended  cheatsheet:
+	https://wiki.sans.blue/Tools/pdfs/ScapyCheatSheet_v0.2.pdf
+	Scapy is a network manipulation tool that is very powerful but requires high privileges.
